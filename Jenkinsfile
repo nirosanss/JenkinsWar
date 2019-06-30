@@ -12,6 +12,12 @@ pipeline {
         bat 'mvn clean package'
       }
     }
+    stage('Packaging') {
+      steps {
+        echo 'Prepare Package'
+        archiveArtifacts 'target/*.war'
+      }
+    }
     stage('SIT') {
       steps {
         echo 'Deployment to SIT'
