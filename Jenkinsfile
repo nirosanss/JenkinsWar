@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'Start Build'
-        bat 'mvn --version'
+        bat 'mvn clean package'
       }
     }
     stage('SIT') {
