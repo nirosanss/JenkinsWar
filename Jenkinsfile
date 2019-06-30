@@ -1,11 +1,9 @@
 pipeline {
-  agent none
+  agent any
   stages {
     stage('build') {
       steps {
-        bat 'mvn --version'
         echo 'Start Build'
-        bat 'mvn clean package'
       }
     }
     stage('SIT') {
